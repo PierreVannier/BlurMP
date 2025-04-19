@@ -1,6 +1,6 @@
-# Blurry Vision MP
+# BlurMP
 
-A Python tool to automatically find and blur specified text within video files,
+A Python tool to automatically find and mask specified text within video files,
 optimized for speed using multiprocessing and Tesseract OCR.
 
 ## Features
@@ -79,7 +79,7 @@ python blurry_mp.py <input_video_path> <output_video_path> [-t TEXT] [-f FILE] [
 Or, if installed via the `[project.scripts]` entry point:
 
 ```bash
-blurry-vision <input_video_path> <output_video_path> [-t TEXT] [-f FILE] [options...]
+blurmp <input_video_path> <output_video_path> [-t TEXT] [-f FILE] [options...]
 ```
 
 **Required Arguments:**
@@ -118,7 +118,7 @@ python blurry_mp.py input.mp4 output_pixel.mp4 \
     -j 8
 
 # Process using black fill boxes
-blurry-vision input.mov output_fill.mp4 \
+blurmp input.mov output_fill.mp4 \
     -t "Secret Project" -t "Password123" \
     --blur-type fill \
     -j 16

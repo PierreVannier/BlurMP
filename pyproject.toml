@@ -1,7 +1,7 @@
 [project]
-name = "blurry-vision"
+name = "BlurMP"
 version = "0.1.0"
-description = "Find and blur text in videos using OpenCV and Tesseract OCR with multiprocessing"
+description = "Find and mask text in videos using Tesseract OCR and multiprocessing"
 authors = [
     { name = "Pierre Vannier", email = "Pierre@flint.sh" }, 
 ]
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [project.scripts]
-blurry-vision = "blurry_mp:main"
+blurmp = "blurry_mp:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]

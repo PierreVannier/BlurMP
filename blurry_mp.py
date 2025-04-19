@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Blurry Vision MP - Parallel processing version using Tesseract OCR."""
+"""BlurMP - Find and mask text in videos using Tesseract OCR and multiprocessing."""
 
 import argparse
 import math
