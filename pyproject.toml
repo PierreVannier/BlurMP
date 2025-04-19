@@ -1,0 +1,37 @@
+[project]
+name = "blurry-vision"
+version = "0.1.0"
+description = "Find and blur text in videos using OpenCV and Tesseract OCR with multiprocessing"
+authors = [
+    { name = "Pierre Vannier", email = "Pierre@flint.sh" }, 
+]
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+
+dependencies = [
+    "opencv-python",
+    "numpy",
+    "loguru",
+    "Pillow", # Potentially needed for image operations if helpers were expanded
+    "rich",
+    "pytesseract",
+]
+
+[project.scripts]
+blurry-vision = "blurry_mp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+# --- Optional: Configuration for uv ---
+# You usually don't need this section unless you have specific needs.
+# [tool.uv.pip]
+# extra-index-url = "..." 
+
+[tool.setuptools]
+# Automatically find top-level modules or packages
+packages = {find = {}}
+
+# Add other Ruff configurations here if desired 
