@@ -87,3 +87,4 @@ dmypy.json
 *.mp4
 *.mov
 output/ 
+*.txt

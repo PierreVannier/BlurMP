@@ -1,2 +1,0 @@
-test_string_to_hide_1
-test_string_to_hide_2

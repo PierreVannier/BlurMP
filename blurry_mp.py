@@ -315,23 +315,31 @@ def process_video(
                 n_words = len(words_norm)
 
                 for target_text in terms:
-                    target_tokens = [_norm(tok) for tok in target_text.split()]
-                    if not target_tokens:
+                    target_tokens_list = [_norm(tok) for tok in target_text.split()]
+                    if not target_tokens_list:
                         continue
                     i = 0
                     while i < n_words:
-                        if words_norm[i] == target_tokens[0]:
+                        # Check if the current OCR word STARTS WITH the first target token
+                        # This handles cases like "Karim's" (ocr: karims) matching target "Karim" (target: karim)
+                        if words_norm[i] is not None and words_norm[i].startswith(
+                            target_tokens_list[0]
+                        ):
                             match = True
-                            for j in range(1, len(target_tokens)):
+                            # If target has multiple tokens, check subsequent words for exact match
+                            for j in range(1, len(target_tokens_list)):
                                 if (
                                     i + j >= n_words
-                                    or words_norm[i + j] != target_tokens[j]
+                                    or words_norm[i + j]
+                                    != target_tokens_list[
+                                        j
+                                    ]  # Subsequent tokens must match exactly
                                 ):
                                     match = False
                                     break
                             if match:
                                 xs, ys = [], []
-                                for j in range(len(target_tokens)):
+                                for j in range(len(target_tokens_list)):
                                     xs.extend(
                                         [
                                             data["left"][i + j],
@@ -354,7 +362,7 @@ def process_video(
                                         [x_min, y_max],
                                     ]
                                     all_bboxes_for_segment.append(bbox)
-                                i += len(target_tokens)
+                                i += len(target_tokens_list)
                                 continue
                         i += 1
             except Exception as ocr_e:
