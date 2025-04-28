@@ -5,9 +5,7 @@ optimized for speed using multiprocessing and Tesseract OCR.
 
 ## Demo
 
-<video src="https://youtu.be/6fKC7-yNCM4" width="800" height="800" controls></video>
-
-*Demo video showing BlurMP masking 7 different text strings with various blur techniques*
+![Demo video showing BlurMP masking 7 different text strings with various blur techniques](./output.gif)
 
 
 ## Features
