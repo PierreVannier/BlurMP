@@ -84,7 +84,6 @@ dmypy.json
 .idea/
 
 # Output files from this project
-*.mp4
 *.mov
 output/ 
 *.txt

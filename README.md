@@ -3,6 +3,13 @@
 A Python tool to automatically find and mask specified text within video files,
 optimized for speed using multiprocessing and Tesseract OCR.
 
+## Demo
+
+![Demo of BlurMP in action](demo_blurred_small.mp4)
+
+*Demo video showing BlurMP masking 7 different text strings with various blur techniques*
+
+
 ## Features
 
 *   Detects text in video frames using Tesseract OCR (via `pytesseract`).
