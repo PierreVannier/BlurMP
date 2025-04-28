@@ -5,7 +5,7 @@ optimized for speed using multiprocessing and Tesseract OCR.
 
 ## Demo
 
-![Demo of BlurMP in action](demo_blurred_small.mp4)
+<video src="./demo_blurred_small.mp4" width="800" height="800" controls></video>
 
 *Demo video showing BlurMP masking 7 different text strings with various blur techniques*
 
